@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-3xl;
+    margin-bottom: 0px !important;
+  }
+  h2 {
+    @apply text-2xl;
+    margin-bottom: 0px !important;
+  }
+
+  h3 {
+    @apply text-xl font-semibold;
+    margin-bottom: 0px !important;
+  }
+
+  h4 {
+    @apply text-lg font-semibold;
+    margin-bottom: 0px !important;
+  }
+
+  h5 {
+    @apply text-base;
+    margin-bottom: 0px !important;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply text-white bg-primary  hover:bg-primary-strong font-bold !important;
+  }
+
+  .error-msg {
+    @apply text-[#ff353c] text-sm text-center;
+  }
+
+  .shadow-popup-logout {
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.05);
+  }
+}

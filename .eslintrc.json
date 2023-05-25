@@ -1,0 +1,23 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/semi": ["error", "always"],
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/self-closing-comp": "error",
+    "jsx-a11y/alt-text": "error",
+    "react-hooks/exhaustive-deps": 0,
+    "@next/next/no-img-element": 0,
+    "no-console": "error",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ]
+  }
+}
