@@ -1,4 +1,7 @@
 pipeline {
+    agent {
+        label 'Built-In Node'
+    }
     parameters {
         string(name: 'nhatanh', defaultValue: 'ok', description: 'Enter the Name Service')
     }
