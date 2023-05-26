@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     parameters {
         string(name: 'nhatanh', defaultValue: 'ok', description: 'Enter the Name Service')
     }
@@ -18,7 +18,7 @@ pipeline {
         stage('Echo Source Code Change') {
             when {
                 anyOf {
-                    // changeset "*"
+                    changeset "*"
                     expression { 
                         params.nhatanh == 'ok' 
                     }
