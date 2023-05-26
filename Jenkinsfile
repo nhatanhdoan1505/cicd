@@ -1,16 +1,35 @@
 pipeline {
-    agent {
-        // Define the agent for running the pipeline
+    parameters {
+        string(name: 'nhatanh', defaultValue: 'ok', description: 'Enter the Name Service')
     }
+
     stages {
-       stage('Checkout Source Code') {
-        when {
-            changeset "*"
-            branch 'main'
+        stage('Checkout') {
+            steps {
+                script {
+                    echo 'Check out'
+                }
+                // git branch: 'main', url: 'https://github.com/nhatanhdoan1505/cicd.git/'
+            }
         }
-        steps {
-        echo "Source code change"
+
+        stage('Echo Source Code Change') {
+            when {
+                anyOf {
+                    // changeset "*"
+                    expression { 
+                        params.nhatanh == 'ok' 
+                    }
+                }
+                anyOf{
+                    branch 'main'
+                }
+            }
+            steps {
+                script {
+                    echo 'Source code change'
+                }
+            }
         }
-    }
     }
 }
